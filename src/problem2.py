@@ -2,8 +2,8 @@
 Exam 1, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Bryce Pruemer.  March 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -114,8 +114,32 @@ def problem2(line1, line2, thickness, win):
       :type thickness:  int
       :type win:        rg.RoseWindow
     """
+    #1
+    line1.attach_to(win)
+    line2.attach_to(win)
+    win.render()
+
+    #2
+    x1val = (line1.start.x + line1.end.x)/2
+    y1val = (line1.start.y + line1.end.y)/2
+
+    x2val = (line2.start.x + line2.end.x) / 2
+    y2val = (line2.start.y + line2.end.y) / 2
+
+    midline1 = rg.Point(x1val, y1val)
+    midline2 = rg.Point(x2val, y2val)
+    rect = rg.Rectangle(midline1, midline2)
+    rect.attach_to(win)
+    win.render()
+
+    #3
+    rect.outline_thickness = thickness
+
+    #4
+    rect.outline_color = line1.color
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function, TESTING each step as you go.
+    # DONE: 2. Implement and test this function, TESTING each step as you go.
     #          Tests have been written for you (above).
     #   See the IMPORTANT NOTE just above the DEF line above.
     # -------------------------------------------------------------------------
