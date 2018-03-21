@@ -102,12 +102,12 @@ def problem3(rect, n, window):
 
         rad = (abs(rect.corner_2.y - rect.corner_1.y))/2
         if rect.corner_2.x - rect.corner_1.x > 0:
-            centerpointx = rect.corner_2.x + (k * 2*rad*math.cos(45))
+            centerpointx = rect.corner_2.x + (k * 2*rad*math.cos(math.pi/4))
 
         else:
-            centerpointx = rect.corner_1.x + (k * 2 * rad * math.cos(45))
+            centerpointx = rect.corner_1.x + (k * 2 * rad * math.cos(math.pi/4))
 
-        centerpointy = rect.corner_2.y + (k * 2 * rad * math.sin(45))
+        centerpointy = rect.corner_2.y + (k * 2 * rad * math.sin(math.pi/4))
         centerpoint = rg.Point(centerpointx, centerpointy)
         circle = rg.Circle(centerpoint, rad)
         circle.attach_to(window)
